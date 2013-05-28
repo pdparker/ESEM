@@ -125,9 +125,9 @@ esemInvaTarget <- function(Fs, Data, GroupVar, Groups, Use, FileOut=getwd(), Fil
       "ANALYSIS: estimator=mlr; ROTATION = target(OBLIQUE);", "\n",
       MultiGroup1,"\n",
       paste("OUTPUT: TECH1;"),  sep="\n", 
-      file=paste(FileOut,"ModelTemp.inp", collapse=""))
+      file=paste0(FileOut,"ModelTemp.inp"))
   #Reads in created file for manipulation
-  Model <- readLines(paste(FileOut,"ModelTemp.inp", collapse=""))
+  Model <- readLines(paste0(FileOut,"ModelTemp.inp"))
   #Warning
   if(any(lapply(Model, nchar)>90))stop("A line in the model is greater than the allowable 90 characters. 
                                       This may be due to variable names or file names that are too long.")
@@ -246,7 +246,7 @@ esemInvaTarget <- function(Fs, Data, GroupVar, Groups, Use, FileOut=getwd(), Fil
   Model13 <- gsub('NO.', '13', Model13)
   writeLines(Model13, paste(FileOut,"Model13.inp", sep="/"))
   #Removes master file so it does not get used in Mplus Automation
-  file.remove(paste(FileOut,"ModelTemp.inp", collapse=""))
+  file.remove(paste(FileOut,"ModelTemp.inp"))
 }
 
   
