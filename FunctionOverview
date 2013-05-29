@@ -35,6 +35,12 @@ What it does.
 ----------------------------
 The function first checks input. Mplus has a number of restriction on input files and the extensive checks aim to ensure they are met. The only exception to this is for variable names. Mplus requires variable names to be 8 characters or less but will run input scripts with more characters by truncating the names. As such the input script should run, however, too many variables with over 8 characters may make a script run over line character limits and result in odd output. For this reason it is best to ensure all variables are 8 characters or less. The functions here will return a warning for variables over 8 characters but will not produce an error.
 
+Example
+--------------------------
+Using Data from simulated model:
+
+esemInvaTarget(2, data, GroupVar = "group", c("males", "females"), 1:12, FileOut="ESEM", FileIn="ESEM/ESEM.dat", Pattern=list(c(1,6), c(7,12)),LatentNames=c("Latent1", "Latent2"))
+
 
 
 
