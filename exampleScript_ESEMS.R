@@ -28,7 +28,9 @@ runModels(tempFile)
 FitSummaries <- extractModelSummaries(tempFile)
 showSummaryTable(FitSummaries, keepCols=c("Title", "ChiSqM_Value", "ChiSqM_DF", 
                                           "CFI", "TLI", "BIC", "RMSEA_Estimate",
-                                          "RMSEA_90CI_LB", "RMSEA_90CI_UB"))
+                                          "RMSEA_90CI_LB", "RMSEA_90CI_UB"),
+                 sortBy="ChiSqM_DF")
+
 
 
 
