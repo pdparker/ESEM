@@ -41,6 +41,13 @@ Using Data from simulated model:
 
 esemInvaTarget(2, data, GroupVar = "group", c("males", "females"), 1:12, FileOut="ESEM", FileIn="ESEM/ESEM.dat", Pattern=list(c(1,6), c(7,12)),LatentNames=c("Latent1", "Latent2"))
 
+The entire work flow can be run passively by imputing the following code into R:
+
+----------------------------------------------------------------------------
+	trial<-"http://raw.github.com/pdparker/ESEM/master/exampleScript_ESEMS.R"
+	source(url(trial))
+----------------------------------------------------------------------------
+
 
 
 
