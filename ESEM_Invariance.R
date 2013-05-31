@@ -53,20 +53,20 @@ esemInvaTarget <- function(Fs, Data, GroupVar, Groups, Use, FileOut=getwd(), Fil
   
   for (i in 1:Fs){
                   if(i == 1){
-                     efaLine[[i]] <- paste(LatentNames[i], " BY ", names(Data)[Pattern[[i]][1]], "-", 
-                                     names(Data)[Pattern[[i]][2]], " ", names(Data)[Pattern[[i+1]][1]],
-                                     "-", names(Data)[Pattern[[Fs]][2]], "~", 0, " (*t);",
+                     efaLine[[i]] <- paste(LatentNames[i], " BY ", names(Data[,Use])[Pattern[[i]][1]], "-", 
+                                    names(Data[,Use])[Pattern[[i]][2]], " ", names(Data[,Use])[Pattern[[i+1]][1]],
+                                     "-", names(Data[,Use])[Pattern[[Fs]][2]], "~", 0, " (*t);",
                                      sep="") 
                             }else if(i == Fs){
-                              efaLine[[i]] <- paste(LatentNames[i], " BY ", names(Data)[Pattern[[i]][1]], "-", 
-                                     names(Data)[Pattern[[i]][2]], " ", names(Data)[Pattern[[1]][1]],
-                                     "-", names(Data)[Pattern[[Fs-1]][2]], "~", 0, " (*t);",
+                              efaLine[[i]] <- paste(LatentNames[i], " BY ", names(Data[,Use])[Pattern[[i]][1]], "-", 
+                                     names(Data[,Use])[Pattern[[i]][2]], " ", names(Data[,Use])[Pattern[[1]][1]],
+                                     "-", names(Data[,Use])[Pattern[[Fs-1]][2]], "~", 0, " (*t);",
                                      sep="")
                              }else{
-                               efaLine[[i]] <-paste(LatentNames[i], " BY ", names(Data)[Pattern[[i]][1]], "-",
-                                names(Data)[Pattern[[i]][2]], " ", 
-                                names(Data)[Pattern[[1]][1]],"-", names(Data)[Pattern[[i-1]][2]], "~", 0, " ",
-                                names(Data)[Pattern[[i+1]][1]],"-", names(Data)[Pattern[[Fs]][2]], "~", 0,
+                               efaLine[[i]] <-paste(LatentNames[i], " BY ", names(Data[,Use])[Pattern[[i]][1]], "-",
+                                names(Data[,Use])[Pattern[[i]][2]], " ", 
+                               names(Data[,Use])[Pattern[[1]][1]],"-", names(Data[,Use])[Pattern[[i-1]][2]], "~", 0, " ",
+                                names(Data[,Use])[Pattern[[i+1]][1]],"-", names(Data[,Use])[Pattern[[Fs]][2]], "~", 0,
                               " (*t);",sep="")
                             }
                 }
