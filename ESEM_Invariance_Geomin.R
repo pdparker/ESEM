@@ -13,9 +13,7 @@ esemInvaGeomin <- function(Fs=2, Data=data, GroupVar="group", Groups=c("males", 
                            Use=1:12, FileOut=getwd(), FileIn=MplusData, Rotation="GEOMIN(OBLIQUE, .5)"){
   #WARNINGS
   if(any(regexpr("\\.", names(Data))>0)) stop(". is an illegal character in Mplus variable names")
-  if(any(regexpr("\\.", LatentNames)>0)) stop(". is an illegal character in Mplus variable names")
   if(any(regexpr("^[0-9]", names(Data))>0)) stop("Mplus variable names cannot start with a number")
-  if(any(regexpr("^[0-9]", LatentNames)>0)) stop("Mplus variable names cannot start with a number")
   if(any(grepl('\\.(csv|txt|dat)$', FileIn)==0)) stop('Mplus only accepts dat txt or csv files')
   if(any(lapply(names(Data), nchar)>8)) warning("At least one of the variable names is greater than 8 characters. This may cause unexpected output in Mplus")
   #Preprocessing
