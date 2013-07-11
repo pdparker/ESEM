@@ -92,7 +92,7 @@ esemInvaGeomin <- function(Fs=2, Data=data, GroupVar="group", Groups=c("males", 
       ";\n\n", "usevariables ",  
       paste(strwrap(paste(useVars), width = 85, exdent = 5),collapse = "\n"), ";",
       "MISSING=.;\n", GroupLine, "\n",
-      paste("ANALYSIS: estimator=mlr; ROTATION = ", Rotation,";"), "\n",
+      paste("ANALYSIS: estimator=ml; ROTATION = ", Rotation,";"), "\n",
       MultiGroup1,"\n",
       paste("OUTPUT: TECH1;"),  sep="\n", 
       file=paste0(FileOut,"/ModelTemp.inp"))
