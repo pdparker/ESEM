@@ -23,7 +23,7 @@ prepareMplusData(data, filename=file.path(tempDir, "ESEMdata.dat"))
 #Write Esem Scripts
 MplusData <- file.path(tempDir, "ESEMdata.dat")
 esemInvaGeomin(2, data, GroupVar = "TbyG", c("treatM", "contM", "treatF", "contF"),
-               7:12, FileOut=tempDir, FileIn=MplusData)
+               1:6, FileOut=tempDir, FileIn=MplusData)
 
 #Run Models
 runModels(tempDir)
@@ -45,26 +45,7 @@ file.remove(junk)
 #Write Esem Scripts
 MplusData <- file.path(tempDir, "ESEMdata.dat")
 esemInvaGeomin(2, data, GroupVar = "treat", c("treat", "control"),
-               7:12, FileOut=tempDir, FileIn=MplusData)
-
-#Run Models
-runModels(tempDir)
-#Readout fit and place in table
-FitSummaries <- extractModelSummaries(tempDir)
-showSummaryTable(FitSummaries, keepCols=c("Title", "ChiSqM_Value", "ChiSqM_DF", 
-                                          "CFI", "TLI", "RMSEA_Estimate",
-                                          "RMSEA_90CI_LB", "RMSEA_90CI_UB"),
-                 sortBy="Title")
-#Clean up directory by deleting all mplus files
-junk <- dir(path=tempDir,  pattern=".inp$|.out$", full.names = TRUE) 
-file.remove(junk)
-#---------------------------------------------------#
-#Time 2 invariance across treatment gender#
-#---------------------------------------------------#
-#Write Esem Scripts
-MplusData <- file.path(tempDir, "ESEMdata.dat")
-esemInvaGeomin(2, data, GroupVar = "gender", c("male", "female"),
-               7:12, FileOut=tempDir, FileIn=MplusData)
+               1:6, FileOut=tempDir, FileIn=MplusData)
 
 #Run Models
 runModels(tempDir)
