@@ -1,6 +1,8 @@
 ESEM Invariance Script Writter
 =====================================
 
+NO LONGER SUPPORTED. Go to [ESEM_package](https://github.com/pdparker/ESEM_Package)
+
 Overview
 -----------------------------------
 The esemInvaTarget function aims to take minimal user input and and return 13 fully functioning MPlus scripts for invariance across multiple groups. i.e., across gender or experimental conditions. Each script will fit one model of Marsh et al. typology of invariance models starting with a free or configural model with model 13 fitting a complete invariance model. From the configural model, subsequent models progressively holding elements of the model invariant between groups. The function should support invariance for two or more groups. The models are as follows:
