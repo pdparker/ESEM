@@ -1,7 +1,8 @@
 ESEM Invariance Script Writter
 =====================================
 
-NO LONGER SUPPORTED. Go to [ESEM_package](https://github.com/pdparker/ESEM_Package)
+Supplementary material and example files and data now housed here.
+However R functions NO LONGER SUPPORTED. Go to [ESEM_package](https://github.com/pdparker/ESEM_Package)
 
 Overview
 -----------------------------------
